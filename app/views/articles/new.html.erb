@@ -1,7 +1,7 @@
 <div class="container">
   <h1>New Article</h1>
 
-  <%= form_with model: @article_new do |form| %>
+  <%= form_with model: @article_new, method: :post do |form| %>
     <div>
       <%= form.label :title %><br>
       <%= form.text_field :title %>
