@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :student
+
+  root 'articles#index'
+  resources :articles
 end

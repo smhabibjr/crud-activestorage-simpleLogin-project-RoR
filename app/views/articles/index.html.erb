@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>All Articles </h1>
+
+  <ur>
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  </ur>
+</div>
