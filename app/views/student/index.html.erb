@@ -1,2 +1,20 @@
-<h1>Student#index</h1>
-<p>Find me in app/views/student/index.html.erb</p>
+<div class="container">
+
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @students.each do |student| %>
+      <tr>
+        <td><a href=" /student/show/ <%= student.id %> "> <%= student.name %> </a></td>
+        <td><a href="#"> <%= student.email %> </a></td>
+        <td><a class="btn btn-primary" href="#"> Edit</a> </td>
+        <td><a class="btn btn-danger" href="#"> delete</a> </td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>

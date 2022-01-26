@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
-
+  root 'student#index'
   get 'student/index'
-  get 'student/show'
+  get 'student/show/:id' => 'student#show'
   get 'student/new'
-  get 'student/create'
+  post '/student/create' => 'student#create'
   get 'student/edit'
   get 'student/update'
   get 'student/destroy'
-  root 'articles#index'
+
+
   resources :articles
 end

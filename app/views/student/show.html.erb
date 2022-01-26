@@ -1,2 +1,19 @@
-<h1>Student#show</h1>
-<p>Find me in app/views/student/show.html.erb</p>
+<div class="container">
+
+  <% if flash[:notice] %>
+    <div class="notice alert alert-success">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <table class="table">
+    <tr>
+      <th>Studnt Name </th>
+      <th>Studnt email</th>
+    </tr>
+    <tr>
+      <td> <%= @single_student_show.name %> </td>
+      <td> <%= @single_student_show.email %> </td>
+    </tr>
+  </table>
+</div>
