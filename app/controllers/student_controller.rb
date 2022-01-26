@@ -25,12 +25,26 @@ class StudentController < ApplicationController
   end
 
   def edit
-
+    @edit_student_info = Student.find(params[:id])
   end
 
+
   def update
+
+    find_record = Student.find(params[:id])
+    if find_record.update(params.require(:student).permit(:name, :email))
+      redirect_to student_show_path(find_record)
+      flash[:notice] = "Student #{find_record.name} successfully updated"
+    else
+      redirect_to student_edit_path
+    end
+
+
   end
 
   def destroy
+    find_record_for_delete = Student.find(params[:id])
+    redirect_to student_index_path if find_record_for_delete.destroy
+
   end
 end
