@@ -21,13 +21,11 @@ class StudentController < ApplicationController
     else
       redirect_to student_new_path
     end
-
   end
 
   def edit
     @edit_student_info = Student.find(params[:id])
   end
-
 
   def update
 
@@ -38,13 +36,10 @@ class StudentController < ApplicationController
     else
       redirect_to student_edit_path
     end
-
-
   end
 
   def destroy
     find_record_for_delete = Student.find(params[:id])
     redirect_to student_index_path if find_record_for_delete.destroy
-
   end
 end
