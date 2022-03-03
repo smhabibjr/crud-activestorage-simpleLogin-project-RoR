@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'dashboard/index'
   resources :account_signup, only: [:index, :create]
+  resources :account_login, only: [:index, :create]
 
-  get '/account_login/index'
+  #get '/account_login/index'
   root 'home#index'
   get 'student/index'
   get 'student/show/:id' => 'student#show', as: 'student_show'
