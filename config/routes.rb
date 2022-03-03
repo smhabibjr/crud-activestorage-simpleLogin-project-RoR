@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'account_signup/index'
-  post '/sign_up' => 'account_signup#create'
+  resources :account_signup, only: [:index, :create]
+
   get '/account_login/index'
   root 'home#index'
   get 'student/index'
