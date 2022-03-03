@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   get 'account_signup/index'
-  get 'account_login/index'
+  post '/sign_up' => 'account_signup#create'
+  get '/account_login/index'
   root 'home#index'
   get 'student/index'
   get 'student/show/:id' => 'student#show', as: 'student_show'
