@@ -13,7 +13,7 @@ class StudentController < ApplicationController
   end
 
   def create
-    added_new_student = Student.new(params.require(:student).permit(:name, :email))
+    added_new_student = Student.new(params.require(:student).permit(:name, :email, :student_avatar))
     if added_new_student.save
       added_user_id = added_new_student.id
       redirect_to "/student/show/#{added_user_id}"
@@ -30,7 +30,7 @@ class StudentController < ApplicationController
   def update
 
     find_record = Student.find(params[:id])
-    if find_record.update(params.require(:student).permit(:name, :email))
+    if find_record.update(params.require(:student).permit(:name, :email, :student_avatar))
       redirect_to student_show_path(find_record)
       flash[:notice] = "Student #{find_record.name} successfully updated"
     else

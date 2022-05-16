@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'post/index'
+  get 'post/show'
+  get 'post/new'
+  get 'post/update'
+
+
+
   get 'dashboard/index'
   resources :account_signup, only: [:index, :create]
   resources :account_login, only: [:index, :create]
